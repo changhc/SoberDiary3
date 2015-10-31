@@ -316,6 +316,7 @@ public class PreferenceControl {
 	public static int[] getStartDateData() {
 		int[] data = new int[3];
 		Calendar cal = Calendar.getInstance();
+		cal.add(Calendar.DATE, 1);
 		data[0] = sp.getInt("sYear", cal.get(Calendar.YEAR));
 		data[1] = sp.getInt("sMonth", cal.get(Calendar.MONTH));
 		data[2] = sp.getInt("sDay", cal.get(Calendar.DATE));

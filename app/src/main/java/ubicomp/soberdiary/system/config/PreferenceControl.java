@@ -26,6 +26,7 @@ public class PreferenceControl {
 		setUID("sober_default_test");
 		setIsDeveloper(false);
 		Calendar cal = Calendar.getInstance();
+		cal.add(Calendar.DAY_OF_YEAR, 1);
 		setStartDate(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH));
 	}
 
@@ -316,7 +317,8 @@ public class PreferenceControl {
 	public static int[] getStartDateData() {
 		int[] data = new int[3];
 		Calendar cal = Calendar.getInstance();
-		cal.add(Calendar.DATE, 1);
+		cal.add(Calendar.DAY_OF_YEAR, 1);
+
 		data[0] = sp.getInt("sYear", cal.get(Calendar.YEAR));
 		data[1] = sp.getInt("sMonth", cal.get(Calendar.MONTH));
 		data[2] = sp.getInt("sDay", cal.get(Calendar.DATE));
@@ -356,6 +358,8 @@ public class PreferenceControl {
 	public static int[] getLockDateData() {
 		int[] data = new int[3];
 		Calendar cal = Calendar.getInstance();
+		cal.add(Calendar.DAY_OF_YEAR, 1);
+
 		data[0] = sp.getInt("lockYear", cal.get(Calendar.YEAR));
 		data[1] = sp.getInt("lockMonth", cal.get(Calendar.MONTH));
 		data[2] = sp.getInt("lockDay", cal.get(Calendar.DATE));
